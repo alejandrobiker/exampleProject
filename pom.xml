@@ -8,9 +8,9 @@
   <artifactId>FabricaSoaint</artifactId>
   <version>1.0-SNAPSHOT</version>
   
-  <name>FabricaSoaint</name>
+  <!--name>FabricaSoaint</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <!--url>http://www.example.com</url-->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,20 +26,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
- 
-  <distributionManagement>    
-      <repository>
-        <id>deployment</id>
-        <name>Internal Releases</name>
-        <url>http://localhost:8081/repository/SAMPLE-REL/</url>
-      </repository>
-    
-      <snapshotRepository>
-        <id>deployment</id>
-        <name>Internal Snapshots</name>
-        <url>http://localhost:8081/repository/SAMPLE-SNAP/</url>
-      </snapshotRepository>
-  </distributionManagement> 
   
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -86,4 +72,19 @@
       </plugins>
     </pluginManagement>
   </build>
+  
+  
+  <distributionManagement>    
+      <repository>
+        <id>deployment</id>
+        <name>Internal Releases</name>
+        <url>http://localhost:8081/repository/SAMPLE-REL/</url>
+      </repository>
+    
+      <snapshotRepository>
+        <id>deployment</id>
+        <name>Internal Snapshots</name>
+        <url>http://localhost:8081/repository/SAMPLE-SNAP/</url>
+      </snapshotRepository>
+  </distributionManagement> 
 </project>
