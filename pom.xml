@@ -4,21 +4,6 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
-  <distributionManagement>
-    
-      <repository>
-        <id>releases</id>
-        <name>releases</name>
-          <url>http://localhost:8081/repository/sample-release</url>
-      </repository>
-    
-      <snapshotsRepository>
-        <id>snapshots</id>
-        <name>snapshots</name>
-          <url>http://localhost:8081/repository/sample-snap</url>
-     </snapshotsRepository>
-  </distributionManagement>  
-  
   <groupId>soaint.fabrica</groupId>
   <artifactId>FabricaSoaint</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -41,7 +26,31 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
+  
+  <profiles>
+    <profile>
+        <id>nexus</id>
+        <activation>
+        <activeByDefault>true</activeByDefault>
+        </activation>
+        <repositories>
+        <repository>
+        <id>nexus</id>
+        <name>Nexus</name>
+        <url>http://172.16.1.79:8082/repository/maven-public/</url>
+        <releases>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        </releases>
+        <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        </snapshots>
+        </repository>
+        </repositories>
+    </profile>
+    </profiles>
+  
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
